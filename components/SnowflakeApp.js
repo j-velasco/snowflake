@@ -51,7 +51,12 @@ const emptyState = (): SnowflakeAppState => {
     title: '',
     milestoneByTrack: {
       'LEADERSHIP': 0,
-      'MENTORSHIP': 0
+      'MENTORSHIP': 0,
+      'TECHNICAL SKILLS': 0,
+      'COMMUNICATION': 0,
+      'EMOTIONAL INTELLIGENCE': 0,
+      'DELIVERY': 0,
+      'BUSINESS KNOWLEDGE': 0,
     },
     focusedTrackId: 'LEADERSHIP',
   }
@@ -63,7 +68,12 @@ const defaultState = (): SnowflakeAppState => {
     title: 'Staff Engineer',
     milestoneByTrack: {
       'LEADERSHIP': 0,
-      'MENTORSHIP': 0
+      'MENTORSHIP': 0,
+      'TECHNICAL SKILLS': 0,
+      'COMMUNICATION': 0,
+      'EMOTIONAL INTELLIGENCE': 0,
+      'DELIVERY': 0,
+      'BUSINESS KNOWLEDGE': 0,
     },
     focusedTrackId: 'LEADERSHIP',
   }
@@ -128,8 +138,8 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
           }
         `}</style>
         <div style={{margin: '19px auto 0', width: 142}}>
-          <a href="https://medium.com/" target="_blank">
-            <Wordmark />
+          <a href="https://www.typeform.com/" target="_blank">
+            Typeform
           </a>
         </div>
         <div style={{display: 'flex'}}>

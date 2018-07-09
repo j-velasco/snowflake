@@ -1,12 +1,17 @@
 // @flow
 import * as d3 from 'd3'
 
-export type TrackId = 'LEADERSHIP' | 'MENTORSHIP'
+export type TrackId = 'LEADERSHIP' | 'MENTORSHIP' | 'TECHNICAL SKILLS' | 'COMMUNICATION' | 'EMONTIONAL INTELLIGENCE' | 'DELIVERY' | 'BUSINESS KNOWLEDGE'
 export type Milestone = 0 | 1 | 2 | 3 | 4 | 5
 
 export type MilestoneMap = {
   'LEADERSHIP': Milestone,
-  'MENTORSHIP': Milestone
+  'MENTORSHIP': Milestone,
+  'TECHNICAL SKILLS': Milestone,
+  'COMMUNICATION': Milestone,
+  'EMONTIONAL INTELLIGENCE': Milestone,
+  'DELIVERY': Milestone,
+  'BUSINESS KNOWLEDGE': Milestone,
 }
 export const milestones = [0, 1, 2, 3, 4, 5]
 
@@ -61,133 +66,323 @@ type Tracks = {|
 export const tracks: Tracks = {
   "LEADERSHIP": {
     "displayName": "Leadership",
-    "category": "D",
-    "description": "Promotes Medium to the outside world and establishes it as an attractive and thoughtful place to work",
+    "category": "A",
+    "description": "Description",
     "milestones": [{
-      "summary": "Represents Medium well externally, and influences individuals positively",
+      "summary": "Level 1",
       "signals": [
-        "Shares personal and organizational successes with their network",
-        "Attends Medium-hosted events and talks with guests",
-        "Communicates genuine and honest excitement about their work externally",
+        "",
       ],
       "examples": [
-        "Shared a Medium product launch post on Facebook",
-        "Acted as a guide for a non-friend visitor to the office",
-        "Supported PR efforts by giving a quote or having a photo taken",
+        "",
       ],
     }, {
-      "summary": "Participates more centrally in small events, and takes simple actions that positively influence groups of people",
+      "summary": "Level 2",
       "signals": [
-        "Takes meaningful action to introduce people to Medium",
-        "Joined public Slack group and represented Medium appropriately, and well",
-        "Organizes positive small- or medium-sized events that bring people to Medium",
+        "",
       ],
       "examples": [
-        "Volunteered as a helper for CODE2040 writing workshop",
-        "Organized a short tour of the office by college students",
-        "Talked at a Women Who Code event hosted at Medium",
+        "",
       ],
     }, {
-      "summary": "Works hard to positively influence large groups of people on their views of Medium",
+      "summary": "Level 3",
       "signals": [
-        "Mentors or participates in a high visibility way in an external organization",
-        "Builds fruitful partnerships with external organizations",
-        "Writes blog posts about Medium that receive moderate traffic",
+        "",
       ],
       "examples": [
-        "Represented Medium on a panel at a conference of industry experts",
-        "Established close ties with Creative Commons",
-        "Built a durable, long-standing relationship with Code2040",
+        "",
       ],
     }, {
-      "summary": "Establishes Medium as an great, innovative company and workplace to the whole industry",
+      "summary": "Level 4",
       "signals": [
-        "Establishes themself as an industry thought leader who attracts talent",
-        "Publishes material about Medium's organizational or technical innovations",
-        "Leverages significant following to evangelise Medium",
+        "",
       ],
       "examples": [
-        "Published a paper on Medium technology in a peer-reviewed journal",
-        "Authored joint-press release with EFF on DNT",
-        "Published “Why Content Editable Is Terrible” on the Medium engineering blog",
+        "",
       ],
     }, {
-      "summary": "Introduces Medium in a positive light to a wider audience outside the industry",
+      "summary": "Level 5",
       "signals": [
-        "Delivers key messages to broad, mainstream audiences",
-        "Influences people with large audiences to talk about Medium positively",
-        "Drives recognition and adoption of Medium in significant numbers",
+        "",
       ],
       "examples": [
-        "Published or interviewed in a mainstream newspaper or website outside tech",
-        "Keynoted a conference with international attention",
-        "Represented Medium in national televised media",
+        "",
       ],
     }],
   },
   "MENTORSHIP": {
     "displayName": "Mentorship",
-    "category": "A",
-    "description": "Develops expertise in native mobile platform engineering, such as iOS or Android",
+    "category": "B",
+    "description": "Description",
     "milestones": [{
-      "summary": "Works effectively within established iOS or Android architectures, following current best practices",
+      "summary": "Level 1",
       "signals": [
-        "Delivers features requiring simple local modifications",
-        "Adds simple actions that call server endpoints",
-        "Reuses existing components appropriately",
+        "",
       ],
       "examples": [
-        "Added existing button to a different iOS surface",
-        "Add follow button for publications on Android",
-        "Fetched and displayed a new stream, using existing stream item styles",
+        "",
       ],
     }, {
-      "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
+      "summary": "Level 2",
       "signals": [
-        "Defines new useful and appropriate proto-generated objects",
-        "Creates simple new activities on Android",
-        "Migrates code from old patterns to new patterns",
+        "",
       ],
       "examples": [
-        "Upgraded SDWebImage to a new major version",
-        "Added support for rendering a new type of stream item",
-        "Prototyped a simple new feature quickly",
+        "",
       ],
     }, {
-      "summary": "Designs major new features and demonstrates a nuanced understanding of mobile platform constraints",
+      "summary": "Level 3",
       "signals": [
-        "Implements complex features with a large product surface area",
-        "Works effectively with  Android reactive programming framework",
-        "Adds support for new iOS features after a major iOS version upgrade",
+        "",
       ],
       "examples": [
-        "Designed iOS caching strategy for offline reading",
-        "Built series reader on Android",
-        "Informed the team about recent best practice changes and deprecations",
+        "",
       ],
     }, {
-      "summary": "Builds complex, reusable architectures that pioneer best practices and enable engineers to work more effectively",
+      "summary": "Level 4",
       "signals": [
-        "Pioneers architecture migration strategies that reduce programmer burden",
-        "Fixes subtle memory management issues",
-        "Implements interactive dismissals that bring delight",
+        "",
       ],
       "examples": [
-        "Upgraded CocoaPods to a new major version",
-        "Designed architecture for fetching and rendering stream items",
-        "Migrated Android persistance layer to reactive programming",
+        "",
       ],
     }, {
-      "summary": "Is an industry-leading expert in mobile engineering or sets strategic mobile direction for an eng team",
+      "summary": "Level 5",
       "signals": [
-        "Defines long-term goals and ensures active projects are in service of them",
-        "Designs and builds innovative, industry-leading UI interactions",
-        "Invents new techniques to responsibly stretch limits of the Android platform",
+        "",
       ],
       "examples": [
-        "Defined and drove complete migration plan to Swift or Kotlin",
-        "Implemented Android recycler views before platform support existed",
-        "Pioneered application-level abstractions for multi-app environment",
+        "",
+      ],
+    }],
+  },
+  "TECHNICAL SKILLS": {
+    "displayName": "Technical skills",
+    "category": "C",
+    "description": "Description",
+    "milestones": [{
+      "summary": "Level 1",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 2",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 3",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 4",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 5",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }],
+  },
+  "COMMUNICATION": {
+    "displayName": "Communication",
+    "category": "D",
+    "description": "Description",
+    "milestones": [{
+      "summary": "Level 1",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 2",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 3",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 4",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 5",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }],
+  },
+  "EMOTIONAL INTELLIGENCE": {
+    "displayName": "Emotional intelligence",
+    "category": "E",
+    "description": "Description",
+    "milestones": [{
+      "summary": "Level 1",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 2",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 3",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 4",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 5",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }],
+  },
+  "DELIVERY": {
+    "displayName": "Delivery",
+    "category": "F",
+    "description": "Description",
+    "milestones": [{
+      "summary": "Level 1",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 2",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 3",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 4",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 5",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }],
+  },
+  "BUSINESS KNOWLEDGE": {
+    "displayName": "Business knowledge",
+    "category": "G",
+    "description": "Description",
+    "milestones": [{
+      "summary": "Level 1",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 2",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 3",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 4",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
+      ],
+    }, {
+      "summary": "Level 5",
+      "signals": [
+        "",
+      ],
+      "examples": [
+        "",
       ],
     }],
   },
