@@ -50,17 +50,10 @@ const emptyState = (): SnowflakeAppState => {
     name: '',
     title: '',
     milestoneByTrack: {
-      'EVANGELISM': 0,
-      'TEAM_IMPACT': 0,
-      'COMPLEXITY': 0,
-      'ARCHITECTURE': 0,
-      'OPERATIONAL': 0,
-      'TESTING': 0,
-      'INDEPENDENCE': 0,
-      'PLANNING': 0,
-      'BUSINESS': 0,
+      'LEADERSHIP': 0,
+      'MENTORSHIP': 0
     },
-    focusedTrackId: 'EVANGELISM',
+    focusedTrackId: 'LEADERSHIP',
   }
 }
 
@@ -69,17 +62,10 @@ const defaultState = (): SnowflakeAppState => {
     name: 'Cersei Lannister',
     title: 'Staff Engineer',
     milestoneByTrack: {
-      'EVANGELISM': 0,
-      'TEAM_IMPACT': 0,
-      'COMPLEXITY': 0,
-      'ARCHITECTURE': 0,
-      'OPERATIONAL': 0,
-      'TESTING': 0,
-      'INDEPENDENCE': 0,
-      'PLANNING': 0,
-      'BUSINESS': 0,
+      'LEADERSHIP': 0,
+      'MENTORSHIP': 0
     },
-    focusedTrackId: 'BUSINESS',
+    focusedTrackId: 'LEADERSHIP',
   }
 }
 
