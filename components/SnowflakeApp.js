@@ -53,10 +53,10 @@ const emptyState = (): SnowflakeAppState => {
       'LEADERSHIP': 0,
       'MENTORSHIP': 0,
       'TECHNICAL SKILLS': 0,
-      'COMMUNICATION': 0,
-      'EMOTIONAL INTELLIGENCE': 0,
       'DELIVERY': 0,
       'BUSINESS KNOWLEDGE': 0,
+      'COMMUNICATION': 0,
+      'EMONTIONAL INTELLIGENCE': 0,
     },
     focusedTrackId: 'LEADERSHIP',
   }
@@ -64,16 +64,16 @@ const emptyState = (): SnowflakeAppState => {
 
 const defaultState = (): SnowflakeAppState => {
   return {
-    name: 'Cersei Lannister',
+    name: 'The cool guy',
     title: 'Staff Engineer',
     milestoneByTrack: {
       'LEADERSHIP': 0,
       'MENTORSHIP': 0,
       'TECHNICAL SKILLS': 0,
-      'COMMUNICATION': 0,
-      'EMOTIONAL INTELLIGENCE': 0,
       'DELIVERY': 0,
       'BUSINESS KNOWLEDGE': 0,
+      'COMMUNICATION': 0,
+      'EMONTIONAL INTELLIGENCE': 0,
     },
     focusedTrackId: 'LEADERSHIP',
   }
