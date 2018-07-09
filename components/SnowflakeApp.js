@@ -50,36 +50,32 @@ const emptyState = (): SnowflakeAppState => {
     name: '',
     title: '',
     milestoneByTrack: {
-      'EVANGELISM': 0,
-      'TEAM_IMPACT': 0,
-      'COMPLEXITY': 0,
-      'ARCHITECTURE': 0,
-      'OPERATIONAL': 0,
-      'TESTING': 0,
-      'INDEPENDENCE': 0,
-      'PLANNING': 0,
-      'BUSINESS': 0,
+      'LEADERSHIP': 0,
+      'MENTORSHIP': 0,
+      'TECHNICAL SKILLS': 0,
+      'DELIVERY': 0,
+      'BUSINESS KNOWLEDGE': 0,
+      'COMMUNICATION': 0,
+      'EMONTIONAL INTELLIGENCE': 0,
     },
-    focusedTrackId: 'EVANGELISM',
+    focusedTrackId: 'LEADERSHIP',
   }
 }
 
 const defaultState = (): SnowflakeAppState => {
   return {
-    name: 'Cersei Lannister',
+    name: 'The cool guy',
     title: 'Staff Engineer',
     milestoneByTrack: {
-      'EVANGELISM': 0,
-      'TEAM_IMPACT': 0,
-      'COMPLEXITY': 0,
-      'ARCHITECTURE': 0,
-      'OPERATIONAL': 0,
-      'TESTING': 0,
-      'INDEPENDENCE': 0,
-      'PLANNING': 0,
-      'BUSINESS': 0,
+      'LEADERSHIP': 0,
+      'MENTORSHIP': 0,
+      'TECHNICAL SKILLS': 0,
+      'DELIVERY': 0,
+      'BUSINESS KNOWLEDGE': 0,
+      'COMMUNICATION': 0,
+      'EMONTIONAL INTELLIGENCE': 0,
     },
-    focusedTrackId: 'BUSINESS',
+    focusedTrackId: 'LEADERSHIP',
   }
 }
 
@@ -142,8 +138,8 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
           }
         `}</style>
         <div style={{margin: '19px auto 0', width: 142}}>
-          <a href="https://medium.com/" target="_blank">
-            <Wordmark />
+          <a href="https://www.typeform.com/" target="_blank">
+            Typeform
           </a>
         </div>
         <div style={{display: 'flex'}}>

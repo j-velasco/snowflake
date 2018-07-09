@@ -1,21 +1,17 @@
 // @flow
 import * as d3 from 'd3'
 
-export type TrackId = | 'EVANGELISM' | 'TEAM_IMPACT' | 'COMPLEXITY' |
-  'ARCHITECTURE' | 'OPERATIONAL' | 'TESTING' | 'INDEPENDENCE' | 'PLANNING' |
-  'BUSINESS'
+export type TrackId = 'LEADERSHIP' | 'MENTORSHIP' | 'TECHNICAL SKILLS' | 'DELIVERY' | 'BUSINESS KNOWLEDGE' | 'COMMUNICATION' | 'EMONTIONAL INTELLIGENCE'
 export type Milestone = 0 | 1 | 2 | 3 | 4 | 5
 
 export type MilestoneMap = {
-  'EVANGELISM': Milestone,
-  'TEAM_IMPACT': Milestone,
-  'COMPLEXITY': Milestone,
-  'ARCHITECTURE': Milestone,
-  'OPERATIONAL': Milestone,
-  'TESTING': Milestone,
-  'INDEPENDENCE': Milestone,
-  'PLANNING': Milestone,
-  'BUSINESS': Milestone,
+  'LEADERSHIP': Milestone,
+  'MENTORSHIP': Milestone,
+  'TECHNICAL SKILLS': Milestone,
+  'DELIVERY': Milestone,
+  'BUSINESS KNOWLEDGE': Milestone,
+  'COMMUNICATION': Milestone,
+  'EMONTIONAL INTELLIGENCE': Milestone,
 }
 export const milestones = [0, 1, 2, 3, 4, 5]
 
@@ -63,609 +59,391 @@ export type Track = {
 }
 
 type Tracks = {|
-  'EVANGELISM': Track,
-  'TEAM_IMPACT': Track,
-  'COMPLEXITY': Track,
-  'ARCHITECTURE': Track,
-  'OPERATIONAL': Track,
-  'TESTING': Track,
-  'INDEPENDENCE': Track,
-  'PLANNING': Track,
-  'BUSINESS': Track,
+  'LEADERSHIP': Track,
+  'MENTORSHIP': Track,
+  'TECHNICAL SKILLS': Track,
+  'DELIVERY': Track,
+  'BUSINESS KNOWLEDGE': Track,
+  'COMMUNICATION': Track,
+  'EMONTIONAL INTELLIGENCE': Track,
 |}
 
 export const tracks: Tracks = {
-  "EVANGELISM": {
-    "displayName": "Evangelism",
+  "LEADERSHIP": {
+    "displayName": "Leadership",
+    "category": "A",
+    "description": "Leading by example, growing teams and understading what drives people",
+    "milestones": [{
+      "summary": "Level 1",
+      "signals": [
+        "Able to identify and communicate problems with the product team and process.",
+      ],
+      "examples": [
+        "Raised a concern about inefficient standups at the retro",
+      ],
+    }, {
+      "summary": "Level 2",
+      "signals": [
+        "Able to identify problems with the product team and process, and investigate potential causes.",
+        "Occasionally takes a lead in product team processes."
+      ],
+      "examples": [
+        "Facilitated a product team retrospective",
+        "Led a feature kick-off"
+      ],
+    }, {
+      "summary": "Level 3",
+      "signals": [
+        "Able to identify problems with the product team and process, investigate potential causes, and propose solutions/next steps.",
+        "Able to identify product team and process areas that require ownership/improvement."
+      ],
+      "examples": [
+        "Suggested a new standup format",
+      ],
+    }, {
+      "summary": "Level 4",
+      "signals": [
+        "Able to identify problems with the product team and process, investigate potential causes, implement solutions/next steps, and proactively inform the right people of the change.",
+      ],
+      "examples": [
+        "Implemented a new bug-tracking process",
+      ],
+    }, {
+      "summary": "Level 5",
+      "signals": [
+        "Able to identify problems with the product team and process, and encourage developers to own investigations and proposals for fixes.",
+        "Able to support and lead technical direction in a product team."
+      ],
+      "examples": [
+        "Ran a kick-off meeting",
+      ],
+    }],
+  },
+  "MENTORSHIP": {
+    "displayName": "Mentorship",
+    "category": "A",
+    "description": "Mentoring, coaching and identifying areas of improvement and progression",
+    "milestones": [{
+      "summary": "Level 1",
+      "signals": [
+        "Pairs effectively with other developers in the team.",
+      ],
+      "examples": [
+        "Paired with a developer on a feature",
+      ],
+    }, {
+      "summary": "Level 2",
+      "signals": [
+        "Supports new hires, mentors peers in an ad-hoc way.",
+        "Able to mentor new hires.",
+      ],
+      "examples": [
+        "Acted as a mentor buddy for a new hire",
+        "Helped a developer understand how a system works",
+      ],
+    }, {
+      "summary": "Level 3",
+      "signals": [
+        "Able to deliver constructive, actionable feedback in an empathetic way.",
+      ],
+      "examples": [
+        "Suggested improvements empathetically during a code review",
+        "Shared a blog post with a colleague to help them with a problem",
+        "Identified when it would be more valuable for someone else to pick up a task (e.g. for educational purposes) instead of doing it themselves",
+      ],
+    }, {
+      "summary": "Level 4",
+      "signals": [
+        "Actively coach / mentor junior members of the team.",
+        "Actively works to share information with the team, e.g. best practices, technical approaches (avoiding silos).",
+      ],
+      "examples": [
+        "Prepared and delivered a presentation on Git best practices",
+        "Introduced a short presentation on Ruby best practices as part of onboarding",
+      ],
+    }, {
+      "summary": "Level 5",
+      "signals": [
+        "Actively mentors developers, identifying areas for focus and improvement.",
+        "Coaches developers to answers for their questions / problems.",
+      ],
+      "examples": [
+        "Did a workshop on how Phoenix works",
+        "Worked with a developer to organise a mob programming session to remove an information silo",
+      ],
+    }],
+  },
+  "TECHNICAL SKILLS": {
+    "displayName": "Technical skills",
+    "category": "B",
+    "description": "Knowledge on best practices, testing, refactoring and awareness of progress in industry",
+    "milestones": [{
+      "summary": "Level 1",
+      "signals": [
+        "Small amount of experience in one area (application, service, domain, technology, stack,etc).",
+        "Able to identify and communicate problems with technology; able to suggest improvements to existing technology and tools.",
+      ],
+      "examples": [
+        "Shipped a small feature",
+        "Added a test",
+        "Found and fixed a bug"
+      ],
+    }, {
+      "summary": "Level 2",
+      "signals": [
+        "Large amount of experience in one area (application, service, domain, technology, stack, etc).",
+        "Able to identify and communicate problems with technology, and investigate potential causes", 
+        "Able to suggest improvements to technology and tools and investigate implementations.",
+      ],
+      "examples": [
+        "Investigated flakey tests on Jenkins, and shared output from initial investigation",
+        "Extracted functionality shared by several pages into its own component"
+      ],
+    }, {
+      "summary": "Level 3",
+      "signals": [
+        "Large amount of experience in multiple areas.",
+        "Able to identify and communicate problems with technology, investigate potential causes, and propose solutions.", 
+        "Able to suggest improvements to technology and tools, investigate implementations",  
+        "Able to identify tech areas that require ownership/ improvement.",
+      ],
+      "examples": [
+        "Investigated adding a new library, and shared results with the team",
+        "Refactored a module in a service before adding functionality to it to make it more testable",
+        "Took ownership of the process inside a system",
+      ],
+    }, {
+      "summary": "Level 4",
+      "signals": [
+        "Keeps up with industry best practices.",
+        "Enables other developers to work more effectively.",
+        "Able to investigate improvements to technology and tools and plan implementations.",
+      ],
+      "examples": [
+        "Made a plan to add/modify the behaviour on one of the main systems to skweb, worked with the team to roll-out",
+        "Work and published a new library",
+      ],
+    }, {
+      "summary": "Level 5",
+      "signals": [
+        "Understands the impact of technology choices on the team.",
+      ],
+      "examples": [
+        "Researched and chose a technology",
+      ],
+    }],
+  },
+  "DELIVERY": {
+    "displayName": "Delivery",
+    "category": "B",
+    "description": "Showing initiative, estimating effectively, ability to delegate, understanding when to get support and impact on team productivity",
+    "milestones": [{
+      "summary": "Level 1",
+      "signals": [
+        "Able to deliver small/medium tasks, working individually or in a pair.",
+      ],
+      "examples": [
+        "Shipped a small feature on time without any support",
+        "Added a medium feature, pairing with another developer",
+      ],
+    }, {
+      "summary": "Level 2",
+      "signals": [
+        "Able to deliver medium/large tasks individually or with support from peers.",
+        "Able to estimate delivery of work",
+      ],
+      "examples": [
+        "Shipped a medium skweb feature without any support",
+        "Correctly estimated the amount of time a new endpoint would take to implement",
+      ],
+    }, {
+      "summary": "Level 3",
+      "signals": [
+        "Able to deliver medium/large tasks that span multiple systems with support from peers.",
+        "Able to estimate delivery of work, and proactively inform the team when work is likely to be delayed.",
+        "Able to question and push back on work that is not valuable for the tech team.",
+        "Able to effectively prioritise own workload and focus across.",
+      ],
+      "examples": [
+        "Shipped a new microservice with support from colleagues",
+        "Broke a large piece of work into smaller individual units that could be parallelised",
+      ],
+    }, {
+      "summary": "Level 4",
+      "signals": [
+        "Able to deliver large tasks that touch multiple systems, working individually when required.",
+        "Able to estimate delivery of work, proactively inform the team when work is likely to be delayed, and suggest sensible workarounds/next steps to mitigate impact of delayed work.",
+      ],
+      "examples": [
+        "Reduced the scope of a feature in order to cut down development time",
+        "Planned and executed a database migration that required downtime, informed the right people about it and sought the right support",
+      ],
+    }, {
+      "summary": "Level 5",
+      "signals": [
+        "Able to estimate delivery of work across the product team, proactively informing the stakeholders on progress.",
+        "Effectively manages deliverables for the team, ensuring the prioritised work is planned and valuable to our goals.",
+        "Actively works to remove distractions and lowimpact work from the tech team.",
+      ],
+      "examples": [
+        "Delegated a task in order to focus on unblocking the developers",
+      ],
+    }],
+  },
+  "BUSINESS KNOWLEDGE": {
+    "displayName": "Business knowledge",
+    "category": "B",
+    "description": "Understanding how the industry works and its competitors, how value is delivered",
+    "milestones": [{
+      "summary": "Level 1",
+      "signals": [
+        "Understands product team’s goals, and how they impact the company.",
+        "Understand impact of work on product team and goals.",
+      ],
+      "examples": [
+        "Suggested features during a team thought-shower",
+        "Explained product team’s goals to a new starter",
+      ],
+    }, {
+      "summary": "Level 2",
+      "signals": [
+        "Able to ask questions / seek clarity on what the product team is doing and why.",
+      ],
+      "examples": [
+        "Raised a concern about the team’s goals at a retrospective",
+        "Asked the team PM for clarification on why a particular piece of work had been prioritised",
+      ],
+    }, {
+      "summary": "Level 3",
+      "signals": [
+        "Able to understand company goals, ask questions/challenge company goals/seek clarity on what the company is doing and why.",
+      ],
+      "examples": [
+        " Asked a question about next quarter’s goals at a company meeting",
+        "Understand company’s goals in a 1:1 with manager",
+        "Able to clearly explain company goals to others in the team",
+      ],
+    }, {
+      "summary": "Level 4",
+      "signals": [
+        "Able to communicate/explain/advocate product team’s goals to developers in the team.",
+      ],
+      "examples": [
+        "Clarified to a developer on the team why a particular piece of work was valuable",
+        "Encouraged developers on the team to think about their work in terms of impact on the product teams goals",
+      ],
+    }, {
+      "summary": "Level 5",
+      "signals": [
+        "Understand and communicate the goals across product teams, and how they contribute to the company’s success.",
+        "Works to make sure developers understand the team and company’s goals.",
+        "Help shape product team goals to ensure they’re delivering value for the business.",
+      ],
+      "examples": [
+        "Worked with a Product Owner to pick a feasible metric for the quarter",
+        "Had a 1:1 with a developer and gave them the context behind the quarterly goal",
+      ],
+    }],
+  },
+  "COMMUNICATION": {
+    "displayName": "Communication",
     "category": "D",
-    "description": "Promotes Medium to the outside world and establishes it as an attractive and thoughtful place to work",
+    "description": "Explaining work to peers and non-technical stakeholders, proactive communication",
     "milestones": [{
-      "summary": "Represents Medium well externally, and influences individuals positively",
+      "summary": "Level 1",
       "signals": [
-        "Shares personal and organizational successes with their network",
-        "Attends Medium-hosted events and talks with guests",
-        "Communicates genuine and honest excitement about their work externally",
+        "Communicates with peers effectively and in a timely manner.",
       ],
       "examples": [
-        "Shared a Medium product launch post on Facebook",
-        "Acted as a guide for a non-friend visitor to the office",
-        "Supported PR efforts by giving a quote or having a photo taken",
+        "Consistently writes good commit messages and release log emails",
+        "Asked for help during standup", 
       ],
     }, {
-      "summary": "Participates more centrally in small events, and takes simple actions that positively influence groups of people",
+      "summary": "Level 2",
       "signals": [
-        "Takes meaningful action to introduce people to Medium",
-        "Joined public Slack group and represented Medium appropriately, and well",
-        "Organizes positive small- or medium-sized events that bring people to Medium",
+        "Communicates effectively with non-technical peers, able to present their work to the wider company.",
       ],
       "examples": [
-        "Volunteered as a helper for CODE2040 writing workshop",
-        "Organized a short tour of the office by college students",
-        "Talked at a Women Who Code event hosted at Medium",
+        "Delivered a Show and Tell presentation",
+        "Acted as communicator during a fire and updated appropriate stakeholders in a timely manner",
       ],
     }, {
-      "summary": "Works hard to positively influence large groups of people on their views of Medium",
+      "summary": "Level 3",
       "signals": [
-        "Mentors or participates in a high visibility way in an external organization",
-        "Builds fruitful partnerships with external organizations",
-        "Writes blog posts about Medium that receive moderate traffic",
+        "Able to explain their work to the wider company, including to a nontechnical audience.",
+        "Practises active listening.",
       ],
       "examples": [
-        "Represented Medium on a panel at a conference of industry experts",
-        "Established close ties with Creative Commons",
-        "Built a durable, long-standing relationship with Code2040",
+        "Wrote a companywide email explaining the impact of a technical change",
+        "Listened to all points of view during a discussion without interrupting anyone",
       ],
     }, {
-      "summary": "Establishes Medium as an great, innovative company and workplace to the whole industry",
+      "summary": "Level 4",
       "signals": [
-        "Establishes themself as an industry thought leader who attracts talent",
-        "Publishes material about Medium's organizational or technical innovations",
-        "Leverages significant following to evangelise Medium",
+        "Can explain the impact of their product team’s work to non-technical stakeholders",
       ],
       "examples": [
-        "Published a paper on Medium technology in a peer-reviewed journal",
-        "Authored joint-press release with EFF on DNT",
-        "Published “Why Content Editable Is Terrible” on the Medium engineering blog",
+        "Delivered a presentation about a technical migration at a company meeting",
+        "Wrote a blog post on the dev blog",
       ],
     }, {
-      "summary": "Introduces Medium in a positive light to a wider audience outside the industry",
+      "summary": "Level 5",
       "signals": [
-        "Delivers key messages to broad, mainstream audiences",
-        "Influences people with large audiences to talk about Medium positively",
-        "Drives recognition and adoption of Medium in significant numbers",
+        "Can explain the impact of their product team’s work to non-technical stakeholders; can explain the team’s goals to their team in an engaging way",
       ],
       "examples": [
-        "Published or interviewed in a mainstream newspaper or website outside tech",
-        "Keynoted a conference with international attention",
-        "Represented Medium in national televised media",
+        "Delivered a presentation about a technical migration at a company meeting",
       ],
     }],
   },
-  "TEAM_IMPACT": {
-    "displayName": "Team impact",
-    "category": "A",
-    "description": "Develops expertise in native mobile platform engineering, such as iOS or Android",
+  "EMOTIONAL INTELLIGENCE": {
+    "displayName": "Emotional intelligence",
+    "category": "D",
+    "description": "Empathy, avoiding blame, awareness of team morale and trying to improve it",
     "milestones": [{
-      "summary": "Works effectively within established iOS or Android architectures, following current best practices",
+      "summary": "Level 1",
       "signals": [
-        "Delivers features requiring simple local modifications",
-        "Adds simple actions that call server endpoints",
-        "Reuses existing components appropriately",
+        "Displays empathy towards colleagues.",
       ],
       "examples": [
-        "Added existing button to a different iOS surface",
-        "Add follow button for publications on Android",
-        "Fetched and displayed a new stream, using existing stream item styles",
+        "Gave unprompted positive feedback to a colleague",
+        "Checked in with a colleague who is struggling",
       ],
     }, {
-      "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
+      "summary": "Level 2",
       "signals": [
-        "Defines new useful and appropriate proto-generated objects",
-        "Creates simple new activities on Android",
-        "Migrates code from old patterns to new patterns",
+        "Displays empathy towards the users of our products.",
       ],
       "examples": [
-        "Upgraded SDWebImage to a new major version",
-        "Added support for rendering a new type of stream item",
-        "Prototyped a simple new feature quickly",
+        "Voiced a concern about an existing bug that affects a large amount of users",
+        "Able to not panic during a user-facing fire and identify the failing part of the stack, working with others to fix it",
       ],
     }, {
-      "summary": "Designs major new features and demonstrates a nuanced understanding of mobile platform constraints",
+      "summary": "Level 3",
       "signals": [
-        "Implements complex features with a large product surface area",
-        "Works effectively with  Android reactive programming framework",
-        "Adds support for new iOS features after a major iOS version upgrade",
+        "Nurtures empathy and no-blame culture in their product team.",
       ],
       "examples": [
-        "Designed iOS caching strategy for offline reading",
-        "Built series reader on Android",
-        "Informed the team about recent best practice changes and deprecations",
+        "Suggested how we can improve a process in the aftermath of a fire instead of identifying whose fault it was",
+        "Understood the context for a certain piece of tech debt instead of apportioning blame",
       ],
     }, {
-      "summary": "Builds complex, reusable architectures that pioneer best practices and enable engineers to work more effectively",
+      "summary": "Level 4",
       "signals": [
-        "Pioneers architecture migration strategies that reduce programmer burden",
-        "Fixes subtle memory management issues",
-        "Implements interactive dismissals that bring delight",
+        "Identifies morale issues in product team, and works with team members to address or seeks support in doing so.",
       ],
       "examples": [
-        "Upgraded CocoaPods to a new major version",
-        "Designed architecture for fetching and rendering stream items",
-        "Migrated Android persistance layer to reactive programming",
+        "Diffused tension between two participants in a retrospective",
       ],
     }, {
-      "summary": "Is an industry-leading expert in mobile engineering or sets strategic mobile direction for an eng team",
+      "summary": "Level 5",
       "signals": [
-        "Defines long-term goals and ensures active projects are in service of them",
-        "Designs and builds innovative, industry-leading UI interactions",
-        "Invents new techniques to responsibly stretch limits of the Android platform",
+        "Able to read the morale of their product team and respond to their needs.",
+        "Works to actively improve morale in the product teams.",
       ],
       "examples": [
-        "Defined and drove complete migration plan to Swift or Kotlin",
-        "Implemented Android recycler views before platform support existed",
-        "Pioneered application-level abstractions for multi-app environment",
-      ],
-    }],
-  },
-  "COMPLEXITY": {
-    "displayName": "Complexity",
-    "category": "A",
-    "description": "Develops expertise in web client technologies, such as HTML, CSS, and JavaScript",
-    "milestones": [{
-      "summary": "Works effectively within established web client architectures, following current best practices",
-      "signals": [
-        "Makes minor modifications to existing screens",
-        "Fixes simple design quality issues",
-        "Uses CSS appropriately, following style guide",
-      ],
-      "examples": [
-        "Implemented sticky footer on the post page",
-        "Hooked up the action to dismiss a post from a stream",
-        "Built PaymentHistory screen using ResponseScreen",
-      ],
-    }, {
-      "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
-      "signals": [
-        "Makes sensible abstractions based on template and code patterns",
-        "Specs and builds interactive components independently",
-        "Prototypes simple new features quickly",
-      ],
-      "examples": [
-        "Built credit card input component",
-        "Created shared buttons template",
-        "Built modal system",
-      ],
-    }, {
-      "summary": "Designs major new features and demonstrates a nuanced understanding of browser constraints",
-      "signals": [
-        "Provides useful design feedback and suggests feasible alternatives",
-        "Performs systemic tasks to significantly minimise bundle size",
-        "Acts a caretaker for all of web client code",
-      ],
-      "examples": [
-        "Designed font loading strategy for Medium",
-        "Researched utility of service workers for Medium",
-        "Designed and implemented ResponseScreen",
-      ],
-    }, {
-      "summary": "Builds complex, reusable architectures that pioneer best practices and enable engineers to work more effectively",
-      "signals": [
-        "Pioneers architecture migrations that reduce programmer burden",
-        "Implements complex UI transitions that bring delight",
-        "Makes architectural decisions that eliminate entire classes of bugs",
-      ],
-      "examples": [
-        "Designed Medium's post morpher and delta system",
-        "Implemented Medium's scrolling text over image blur",
-        "Designed and pioneered proto-based model storage",
-      ],
-    }, {
-      "summary": "Is an industry-leading expert in web client or sets strategic web client direction for an eng team",
-      "signals": [
-        "Invents new techniques to innovate and overcome browser constraints",
-        "Identifies and solved systemic problems with current architecture",
-        "Defines a long-term vision for web client and ensures projects are in service of it",
-      ],
-      "examples": [
-        "Invented CSS in JS",
-        "Defined and drove migration strategy to Lite",
-        "Implemented unidirectional data flow to completion",
-      ],
-    }],
-  },
-  "ARCHITECTURE": {
-    "displayName": "Architecture",
-    "category": "A",
-    "description": "Develops expertise in foundational systems, such as deployments, pipelines, databases and machine learning",
-    "milestones": [{
-      "summary": "Works effectively within established structures, following current best practices",
-      "signals": [
-        "Writes thorough postmortems for service outages",
-        "Makes simple configuration changes to services",
-        "Performs backfills safely and effectively, without causing pages",
-      ],
-      "examples": [
-        "Made safe and effective Ansible changes",
-        "Implemented new ETL pipelines based on existing ones",
-        "Resolved out of disk errors independently",
-      ],
-    }, {
-      "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
-      "signals": [
-        "Made minor version upgrades to technologies",
-        "Builds machine learning jobs within the ML framework",
-        "Triages service issues correctly and independently",
-      ],
-      "examples": [
-        "Upgraded NodeJS from 8.0 to 8.1.1",
-        "Built custom packages for RPMs",
-        "Improved ETL efficiency by improving Dynamo to S3 loading",
-      ],
-    }, {
-      "summary": "Designs standalone systems of moderate complexity, or major new features in existing systems",
-      "signals": [
-        "Acts as primary maintainer for existing critical systems",
-        "Designs moderately complex systems",
-        "Makes major version upgrades to libraries",
-      ],
-      "examples": [
-        "Designed Ansible configuration management",
-        "Built Medium's realtime stats pipeline",
-        "Designed flexible framework for writing machine learning jobs",
-      ],
-    }, {
-      "summary": "Builds complex, reusable architectures that pioneer best practices for other engineers, or multi-system services",
-      "signals": [
-        "Designs complex projects that encompass multiple systems and technologies",
-        "Demonstrates deep knowledge of foundational systems",
-        "Introduces new databases and technologies to meet underserved needs",
-      ],
-      "examples": [
-        "Designed and built BBFD",
-        "Designed AWS configuration management",
-        "Introduced Kinesis and pioneered streaming events pipeline",
-      ],
-    }, {
-      "summary": "Is an industry-leading expert in foundational engineering or sets strategic foundational direction for an eng team",
-      "signals": [
-        "Designs transformational projects in service of long-term goals",
-        "Defines the strategic vision for foundational work and supporting technologies",
-        "Invents industry-leading techniques to solve complex problems",
-      ],
-      "examples": [
-        "Invented a novel ML technique that advanced the state of the art",
-        "Defined and developed Medium's continuous delivery strategy",
-        "Developed and implemented HA strategy",
-      ],
-    }],
-  },
-  "OPERATIONAL": {
-    "displayName": "Operational",
-    "category": "A",
-    "description": "Develops expertise in server side engineering, using technologies such as Go, NodeJS, or Scala",
-    "milestones": [{
-      "summary": "Works effectively within established server side frameworks, following current best practices",
-      "signals": [
-        "Adds NodeJS endpoints using layers architecture",
-        "Adds golang endpoints using Gotham architecture",
-        "Makes minor server changes to support client needs",
-      ],
-      "examples": [
-        "Added IFTTT trigger for new bookmark to medium2",
-        "Added delete audio route to Buggle",
-        "Queried a Dynamo LSI appropriately",
-      ],
-    }, {
-      "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
-      "signals": [
-        "Assesses correctness and utility of existing code and avoids blind copy-pasting",
-        "Generalizes code when appropriate",
-        "Determines data needs from product requirements",
-      ],
-      "examples": [
-        "Identified need for new index on Dynamo",
-        "Acted as caretaker for routes protos",
-        "Updated Facebook API version and codebase dependencies",
-      ],
-    }, {
-      "summary": "Designs standalone systems of moderate complexity, or major new features in existing systems",
-      "signals": [
-        "Acts as primary maintainer for existing critical systems",
-        "Integrates third party services effectively",
-        "Writes playbooks for new service maintenance",
-      ],
-      "examples": [
-        "Implemented Google Auth login to Medium",
-        "Implemented payments integration with Stripe",
-        "Built Textshots server",
-      ],
-    }, {
-      "summary": "Builds complex, reusable architectures that pioneer best practices for other engineers, or multi-system services",
-      "signals": [
-        "Delivers complex systems that achieve their goals",
-        "Avoids subtle architectural mistakes when considering new systems",
-        "Makes appropriate buy vs build choices",
-      ],
-      "examples": [
-        "Designed Medium's ranked feed architecture",
-        "Designed custom domains architecture",
-        "Created Gotham framework for creating Go services",
-      ],
-    }, {
-      "summary": "Is an industry-leading expert in server side engineering or sets strategic server side direction for an eng team",
-      "signals": [
-        "Designs transformational projects of significant complexity and scope",
-        "Makes decisions that have positive, long term, wide ranging consequences",
-        "Identifies and solves systemic problems with current architecture",
-      ],
-      "examples": [
-        "Researched, vetted, and selected Go as Medium's statically typed language",
-        "Defined microservices architecture and medium2 migration plan",
-        "Defined and implemented proprietary IP core to the company's success",
-      ],
-    }],
-  },
-  "TESTING": {
-    "displayName": "Testing",
-    "category": "B",
-    "description": "Delivers well-scoped programs of work that meet their goals, on time, to budget, harmoniously",
-    "milestones": [{
-      "summary": "Effectively delivers individual tasks",
-      "signals": [
-        "Estimates small tasks accurately",
-        "Delivers tightly-scoped projects efficiently",
-        "Writes effective technical specs outlining approach",
-      ],
-      "examples": [
-        "Wrote the technical spec for featured post images",
-        "Delivered stream item support for email digests",
-        "Delivered payment history dashboard",
-      ],
-    }, {
-      "summary": "Effectively delivers small personal projects",
-      "signals": [
-        "Performs research and considers alternative approaches",
-        "Balances pragmatism and polish appropriately",
-        "Defines and hits interim milestones",
-      ],
-      "examples": [
-        "Delivered promo editor",
-        "Delivered audio uploading for web client",
-        "Executed the recommends to claps backfill",
-      ],
-    }, {
-      "summary": "Effectively delivers projects through a small team",
-      "signals": [
-        "Delegates tasks to others appropriately",
-        "Integrates business needs into project planning",
-        "Chooses appropriate project management strategy based on context",
-      ],
-      "examples": [
-        "Ran project retro to assess improvement opportunities",
-        "Completed launch checklist unprompted for well controlled rollout",
-        "Facilitated project kickoff meeting to get buy-in",
-      ],
-    }, {
-      "summary": "Effectively delivers projects through a large team, or with a significant amount of stakeholders or complexity",
-      "signals": [
-        "Finds ways to deliver requested scope faster, and prioritizes backlog",
-        "Manages dependencies on other projects and teams",
-        "Leverages recognition of repeated project patterns",
-      ],
-      "examples": [
-        "Oversaw technical delivery of Hightower",
-        "Managed infrastructure migration to VPC",
-        "Involved marketing, legal, and appropriate functions at project start",
-      ],
-    }, {
-      "summary": "Manages major company pushes delivered by multiple teams",
-      "signals": [
-        "Considers external constraints and business objectives when planning",
-        "Leads teams of teams, and coordinates effective cross-functional collaboration",
-        "Owns a key company metric",
-      ],
-      "examples": [
-        "Managed technical migration to SOA",
-        "Lead technical delivery of 10/7",
-        "Delivered multi-month engineering project on time",
-      ],
-    }],
-  },
-  "INDEPENDENCE": {
-    "displayName": "Independence",
-    "category": "B",
-    "description": "Shares the right amount of information with the right people, at the right time, and listens effectively",
-    "milestones": [{
-      "summary": "Communicates effectively to close stakeholders when called upon, and incorporates constructive feedback",
-      "signals": [
-        "Communicates project status clearly and effectively",
-        "Collaborates with others with empathy",
-        "Asks for help at the appropriate juncture",
-      ],
-      "examples": [
-        "Updated The Watch before running a backfill",
-        "Updated project status changes in Asana promptly",
-        "Gave thoughtful check-in and check-out comments",
-      ],
-    }, {
-      "summary": "Communicates with the wider team appropriately, focusing on timeliness and good quality conversations",
-      "signals": [
-        "Practises active listening and suspension of attention",
-        "Ensures stakeholders are aware of current blockers",
-        "Chooses the appropriate tools for accurate and timely communication",
-      ],
-      "examples": [
-        "Received and integrated critical feedback positively",
-        "Created cross-team Slack channel for payments work",
-        "Spoke to domain experts before writing spec",
-      ],
-    }, {
-      "summary": "Proactively shares information, actively solicits feedback, and facilitates communication for multiple stakeholders",
-      "signals": [
-        "Resolves communication difficulties between others",
-        "Anticipates and shares schedule deviations in plenty of time",
-        "Manages project stakeholder expectations effectively",
-      ],
-      "examples": [
-        "Directed team response effectively during outages",
-        "Gave a substantial Eng All Hands presentation on React",
-        "Gave notice of upcoming related work in Eng Briefing",
-      ],
-    }, {
-      "summary": "Communicates complex ideas skillfully and with nuance, and establishes alignment within the wider organization",
-      "signals": [
-        "Communicates project risk and tradeoffs skillfully and with nuance",
-        "Contextualizes and clarifies ambiguous direction and strategy for others",
-        "Negotiates resourcing compromises with other teams",
-      ],
-      "examples": [
-        "Lead off-site workshop on interviewing",
-        "Wrote Medium's growth framework and rationale",
-        "Aligned the entire organization around claps",
-      ],
-    }, {
-      "summary": "Influences outcomes at the highest level, moves beyond mere broadcasting, and sets best practices for others",
-      "signals": [
-        "Defines processes for clear communication for the entire team",
-        "Shares the right amount of information with the right people, at the right time",
-        "Develops and delivers plans to execs, the board, and outside investors",
-      ],
-      "examples": [
-        "Organized half year check-in company offsite",
-        "Created the communication plan for a large organizational change",
-        "Presented to the board about key company metrics and projects",
-      ],
-    }],
-  },
-  "PLANNING": {
-    "displayName": "Planning",
-    "category": "B",
-    "description": "Embodies and promotes practices to ensure excellent quality products and services",
-    "milestones": [{
-      "summary": "Delivers consistently good quality work",
-      "signals": [
-        "Tests new code thoroughly, both locally, and in production once shipped",
-        "Writes tests for every new feature and bug fix",
-        "Writes clear comments and documentation",
-      ],
-      "examples": [
-        "Caught a bug on Hatch before it went live",
-        "Landed non-trivial PR with no caretaker comments",
-        "Wrote hermetic tests for the happy and sad cases",
-      ],
-    }, {
-      "summary": "Increases the robustness and reliability of codebases, and devotes time to polishing products and systems",
-      "signals": [
-        "Refactors existing code to make it more testable",
-        "Adds tests for uncovered areas",
-        "Deletes unnecessary code and deprecates proactively when safe to do so",
-      ],
-      "examples": [
-        "Requested tests for a PR when acting as reviewer",
-        "Reduced the number of zelda fitzgerald exceptions",
-        "Fixed a TODO for someone else in the codebase",
-      ],
-    }, {
-      "summary": "Improves others' ability to deliver great quality work",
-      "signals": [
-        "Implements systems that enable better testing",
-        "Gives thoughtful code reviews as a domain expert",
-        "Adds tooling to improve code quality",
-      ],
-      "examples": [
-        "Improved PRB to run the same volume of tests faster",
-        "Simplified hermetic test data modification",
-        "Created fixture system for visual quality",
-      ],
-    }, {
-      "summary": "Advocates for and models great quality with proactive actions, and tackles difficult and subtle system issues",
-      "signals": [
-        "Builds systems so as to eliminate entire classes of programmer error",
-        "Focuses the team on quality with regular reminders",
-        "Coordinates Watch priorities and projects",
-      ],
-      "examples": [
-        "Added code coverage reporting to iOS CI pipeline",
-        "Iterated repeatedly to develop Medium's underlines solution",
-        "Defined and oversaw plan for closing Heartbleed vulnerability",
-      ],
-    }, {
-      "summary": "Enables and encourages the entire organization to make quality a central part of the development process",
-      "signals": [
-        "Defines policies for the engineering org that encourage quality work",
-        "Identifies and eliminates single points of failure throughout the organization",
-        "Secures time and resources from execs to support great quality",
-      ],
-      "examples": [
-        "Negotiated resources for Fix-It week with exec team",
-        "Instituted and ensured success of a 20% time policy",
-        "Started The Watch",
-      ],
-    }],
-  },
-  "BUSINESS": {
-    "displayName": "Business",
-    "category": "B",
-    "description": "Challenges the status quo and effects positive organizational change outside of mandated work",
-    "milestones": [{
-      "summary": "Identifies opportunities for organizational change or product improvements",
-      "signals": [
-        "Writes Hatch posts about improvement opportunities",
-        "Raises meaningful tensions in tactical meetings",
-        "Asks leadership team probing questions at FAM",
-      ],
-      "examples": [
-        "Wrote about problems with TTR on Hatch",
-        "Wrote about content policy problems on Hatch",
-        "Reported a site issue in Github",
-      ],
-    }, {
-      "summary": "Causes change to positively impact a few individuals or minor improvement to an existing product or service",
-      "signals": [
-        "Picks bugs off the backlog proactively when blocked elsewhere",
-        "Makes design quality improvements unprompted",
-        "Takes on trust and safety tasks proactively when blocked elsewhere",
-      ],
-      "examples": [
-        "Advocated on own behalf for a change in role",
-        "Implemented flow typing for promises",
-        "Audited web client performance in Chrome and proposed fixes",
-      ],
-    }, {
-      "summary": "Causes change to positively impact an entire team or instigates a minor feature or service",
-      "signals": [
-        "Demonstrates concepts proactively with prototypes",
-        "Fixes complicated bugs outside of regular domain",
-        "Takes ownership of systems that nobody owns or wants",
-      ],
-      "examples": [
-        "Defined style guide to resolve style arguments",
-        "Proposed and implemented at-mentions prototype",
-        "Implemented video for Android independently, unprompted",
-      ],
-    }, {
-      "summary": "Effects change that has a substantial positive impact on the engineering organization or a major product impact",
-      "signals": [
-        "Champions and pioneers new technologies to solve new classes of problem",
-        "Exemplifies grit and determination in the face of persistent obstacles",
-        "Instigates major new features, services, or architectures",
-      ],
-      "examples": [
-        "Created the interviewing rubric and booklet",
-        "Implemented and secured support for native login",
-        "Migrated medium2 to mono repo and bazel",
-      ],
-    }, {
-      "summary": "Effects change that has a substantial positive impact on the whole company",
-      "signals": [
-        "Creates a new function to solve systemic issues",
-        "Galvanizes the entire company and garners buy in for a new strategy",
-        "Changes complex organizational processes",
-      ],
-      "examples": [
-        "Migrated the organization from Holacracy",
-        "Built Medium Android prototype and convinced execs to fund it",
-        "Convinced leadership and engineering org to move to Medium Lite architecture",
+        "Diffused tension between two participants in a retrospective",
+        "Got the engineers in the team excited about a potentially boring piece of work",
       ],
     }],
   },
